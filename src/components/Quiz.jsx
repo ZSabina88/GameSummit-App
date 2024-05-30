@@ -24,7 +24,8 @@ export default function Quiz() {
   };
 
   return (
-    <div id="quiz">
+    // <div id="quiz">
+    <div >
       <Question
         key={activeQuestionIndex}
         index={activeQuestionIndex}

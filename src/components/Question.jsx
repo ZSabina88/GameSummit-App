@@ -4,7 +4,7 @@ import QuestionTimer from './QuestionTimer';
 import QEUSTIONS from "../questions.js"
 
 export default function Question({
-    index,
+    // index,
     onSelectAnswer,
     onSkipAnswer }) {
     const [answer, setAnswer] = useState({

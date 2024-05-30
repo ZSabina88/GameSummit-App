@@ -11,7 +11,8 @@ export default function Summary({ userAnswers }) {
     const wrongAnswersShare = 100 - skippedAnswersShare - correctAnswersShare;
 
     return (
-        <div id='summary'>
+        // <div id='summary'>
+        <div >
             <img src={quizCompleteImg} alt="Trophy icon" />
             <h2>Quiz completed!</h2>
             <div id='summary-stats'>

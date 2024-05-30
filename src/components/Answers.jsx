@@ -7,7 +7,8 @@ export default function Answers({ answers, selectedAnswer, answerState, onSelect
         shuffledAnswers.current.sort(() => Math.random() - 0.5);
     }
     return (
-        <ul id="answers">
+        // <ul id="answers">
+        <ul >
             {shuffledAnswers.current.map((answer) => {
                 const isSelected = selectedAnswer === answer;
                 let cssClass = "";
