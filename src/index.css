@@ -30,6 +30,11 @@ body {
   background-position: center;
 }
 
+a{
+  text-decoration: none;
+}
+
+
 header {
   margin: 2rem 0;
   text-align: center;
@@ -39,6 +44,19 @@ header img {
   width: 3rem;
   height: 3rem;
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+}
+
+header a {
+  color: black;
+  
+}
+header div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 header h1 {
@@ -77,6 +95,30 @@ header h1 {
   font-size: 1.25rem;
   color: #a690c5;
 }
+
+#home{
+  max-width: 50rem;
+  min-height: 400px;
+  margin: auto;
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, #3e2a60 0%, #321061 100%);
+  border-radius: 8px;
+  box-shadow: 1px 1px 8px 4px rgba(12, 5, 32, 0.6);
+  text-align: center;
+  
+}
+
+#home h2{
+  font-size: 1.85rem;
+}
+#home button{
+  width: 15rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
 
 #quiz {
   max-width: 50rem;
