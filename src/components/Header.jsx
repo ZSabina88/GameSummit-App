@@ -9,7 +9,7 @@ export default function Header() {
         <img src={logo} alt="" />
         <NavLink to="/quiz">Quiz</NavLink>
       </div>
-      <h1>Game Summit 2024</h1>
+      <h1>4SIM Game Summit Quiz</h1>
     </header>
   );
 }
