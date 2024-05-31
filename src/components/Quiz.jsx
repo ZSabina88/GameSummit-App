@@ -9,11 +9,12 @@ const getRandomQuestions = (questions, numQuestions) => {
     return shuffled.slice(0, numQuestions);
 };
 
-const randomQuestions = getRandomQuestions(QEUSTIONS, 3);
 
 export const Quiz = () => {
+    const randomQuestions = getRandomQuestions(QEUSTIONS, 3);
     const [userAnswers, setUserAnswers] = useState([]);
     const [questions, setQuestions] = useState(randomQuestions);
+    
 
     const activeQuestionIndex = userAnswers.length;
     const quizIsComplete = activeQuestionIndex === questions.length;
@@ -25,9 +26,10 @@ export const Quiz = () => {
     const handleSkipAnswer = useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
 
     if (quizIsComplete) {
-        return <Summary userAnswers={userAnswers} questions={questions} />;
+        return <Summary userAnswers={userAnswers} questions={questions}/>;
     }
 
+    
     return (
         <div id="quiz">
             <Question

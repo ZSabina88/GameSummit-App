@@ -8,7 +8,7 @@ export const Question = ({ index, questions, onSelectAnswer, onSkipAnswer }) => 
         isCorrect: null
     });
 
-    let timer = 10000;
+    let timer = 40000;
 
     if (answer.selectedAnswer) {
         timer = 1000;
@@ -42,6 +42,7 @@ export const Question = ({ index, questions, onSelectAnswer, onSkipAnswer }) => 
         answerState = "answered";
     }
 
+
     return (
         <div id='question'>
             <QuestionTimer
@@ -51,6 +52,8 @@ export const Question = ({ index, questions, onSelectAnswer, onSkipAnswer }) => 
                 mode={answerState}
             />
             <h2>{questions[index].text}</h2>
+            {questions[index].img && <img src={questions[index].img} alt="question image" />}
+
             <Answers
                 answers={questions[index].answers}
                 selectedAnswer={answer.selectedAnswer}
@@ -60,3 +63,4 @@ export const Question = ({ index, questions, onSelectAnswer, onSkipAnswer }) => 
         </div>
     );
 }
+           

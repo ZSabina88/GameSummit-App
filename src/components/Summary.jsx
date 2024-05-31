@@ -43,6 +43,7 @@ const Summary = ({ userAnswers, questions }) => {
               <h3>{index + 1}</h3>
               <p className='question'>{questions[index].text}</p>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
+              {/* <p className="user-answer correct">{correctAnswer}</p> */}
             </li>
           );
         })}

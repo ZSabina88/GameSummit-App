@@ -179,6 +179,11 @@ header h1 {
   color: #c1b2dd;
 }
 
+#question img{
+  width: fit-content;
+  height: 250px;
+}
+
 #answers {
   list-style: none;
   margin: 0;
@@ -377,23 +382,6 @@ header h1 {
   font-size: 1.2rem;
   margin-top: 2rem;
 }
-
-/* #summary h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin: 0;
-  text-transform: uppercase;
-  color: #3a2353;
-  width: 70%;
-  text-align: center;
-} */
-
-/* @media screen and (max-width: 500px){
-  #summary h2{
-    font-size: 1.4rem;
-  } 
-} */
 
 
 @keyframes slide-in-from-bottom {
