@@ -1,4 +1,3 @@
-import Quiz from "./components/Quiz";
 import StartQuiz from "./components/StartQuiz";
 import ErrorPage from "./pages/Error";
 import RootLayout from "./pages/RootLayout";
@@ -10,7 +9,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <RootLayout />,
-        // errorElement: <ErrorPage/>,
+        errorElement: <ErrorPage/>,
         children: [
             {
                 index: true, element: <StartQuiz />
