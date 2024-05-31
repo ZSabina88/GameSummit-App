@@ -4,6 +4,7 @@ import RootLayout from "./pages/RootLayout";
 import NewQuiz from "./components/NewQuiz";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Quiz } from "./components/Quiz";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
                 index: true, element: <StartQuiz />
             },
             {
-                path: "/quiz", element: <NewQuiz />
+                path: "/quiz", element: <Quiz />
             }
         ]
     }

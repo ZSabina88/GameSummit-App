@@ -30,7 +30,7 @@ body {
   background-position: center;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -48,8 +48,9 @@ header img {
 
 header a {
   color: black;
-  
+
 }
+
 header div {
   display: flex;
   flex-direction: row;
@@ -96,7 +97,7 @@ header h1 {
   color: #a690c5;
 }
 
-#home{
+#home {
   max-width: 50rem;
   min-height: 400px;
   margin: auto;
@@ -105,13 +106,14 @@ header h1 {
   border-radius: 8px;
   box-shadow: 1px 1px 8px 4px rgba(12, 5, 32, 0.6);
   text-align: center;
-  
+
 }
 
-#home h2{
+#home h2 {
   font-size: 1.85rem;
 }
-#home button{
+
+#home button {
   width: 15rem;
   height: 3rem;
   border: 1px solid black;
@@ -259,11 +261,113 @@ header h1 {
   border-radius: 8px;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.6);
   animation: slide-in-from-bottom 0.7s ease-out;
+}
+
+#summary img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+  margin: 0 auto 1rem auto;
+  padding: 1rem;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+  border: 2px solid #3a2353;
+  border-radius: 50%;
+  background: #c18cfa;
+}
+
+#summary h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  color: #3a2353;
+}
+
+#summary ol {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  text-align: center;
+}
+
+#summary li {
+  margin: 2rem 0;
+}
+
+#summary h3 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1rem;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #2c203d;
+  color: #d8cde8;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
+
+#summary .question {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #30273a;
+}
+
+#summary .user-answer {
+  margin: 0.25rem 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  color: #251e2f;
+}
+
+#summary .user-answer.correct {
+  color: #054e37;
+}
+
+#summary .user-answer.wrong {
+  color: #730b4b;
+}
+
+#summary .user-answer.skipped {
+  color: #d1baf2;
+  font-weight: normal;
+}
+
+#summary-stats {
+  display: flex;
+  gap: 3rem;
+  width: 60%;
+  margin: 2rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #594276;
+}
+
+#summary-stats p {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+#summary-stats .number {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 3rem;
+  color: #594276;
+}
+
+#summary-stats .text {
+  font-family: 'Roboto Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #30273a;
+  margin-top: -0.7rem;
+  margin-left: 0.2rem;
+  letter-spacing: 0.1rem;
+}
+
 
 #summary button {
   width: 15rem;
@@ -274,7 +378,7 @@ header h1 {
   margin-top: 2rem;
 }
 
-#summary h2 {
+/* #summary h2 {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   text-align: center;
@@ -283,13 +387,13 @@ header h1 {
   color: #3a2353;
   width: 70%;
   text-align: center;
-}
+} */
 
-@media screen and (max-width: 500px){
+/* @media screen and (max-width: 500px){
   #summary h2{
     font-size: 1.4rem;
   } 
-}
+} */
 
 
 @keyframes slide-in-from-bottom {
@@ -297,6 +401,7 @@ header h1 {
     opacity: 0;
     transform: translateY(10%);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
