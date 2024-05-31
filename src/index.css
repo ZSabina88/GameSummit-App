@@ -259,19 +259,19 @@ header h1 {
   border-radius: 8px;
   box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.6);
   animation: slide-in-from-bottom 0.7s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#summary img {
-  display: block;
-  width: 8rem;
-  height: 8rem;
-  object-fit: contain;
-  margin: 0 auto 1rem auto;
-  padding: 1rem;
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
-  border: 2px solid #3a2353;
-  border-radius: 50%;
-  background: #c18cfa;
+#summary button {
+  width: 15rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  margin-top: 2rem;
 }
 
 #summary h2 {
@@ -283,7 +283,7 @@ header h1 {
   color: #3a2353;
 }
 
-#summary ol {
+/* #summary ol {
   list-style: none;
   margin: 2rem auto;
   padding: 0;
@@ -364,7 +364,7 @@ header h1 {
   margin-top: -0.7rem;
   margin-left: 0.2rem;
   letter-spacing: 0.1rem;
-}
+} */
 
 @keyframes slide-in-from-bottom {
   0% {

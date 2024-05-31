@@ -1,4 +1,4 @@
-import {useState, useCallback} from 'react';
+import { useState, useCallback } from 'react';
 import QEUSTIONS from "../questions.js"
 import Answers from './Answers.jsx';
 import { redirect } from 'react-router-dom';
@@ -11,43 +11,51 @@ function getRandomQuestions(questionsArray, numQuestions) {
 
 const NewQuiz = () => {
     const [selectedQuestions, setSelectedQuestions] = useState(getRandomQuestions(QEUSTIONS, 3));
-const [score, setScore] = useState(0);
-const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-const [userAnswers, setUserAnswers] = useState({});
-const [answer, setAnswer] = useState({
-    selectedAnswer: "",
-    isCorrect: null
-});
-
-
-const handleOptionClick = (option) => {
-    const currentQuestion = selectedQuestions[currentQuestionIndex];
-    const isCorrect = option === currentQuestion.answer;
-
-    setUserAnswers({
-        ...userAnswers,
-        [currentQuestionIndex]: option,
+    const [score, setScore] = useState(0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const [userAnswers, setUserAnswers] = useState({});
+    const [result, setResult] = useState({
+        status: false,
+        scored: ""
+    });
+    const [answer, setAnswer] = useState({
+        selectedAnswer: "",
+        isCorrect: null
     });
 
-    if (isCorrect) {
-        setScore(score + 1);
+
+    const handleOptionClick = (option) => {
+        const currentQuestion = selectedQuestions[currentQuestionIndex];
+        const isCorrect = option === currentQuestion.answer;
+
+        setUserAnswers({
+            ...userAnswers,
+            [currentQuestionIndex]: option,
+        });
+
+        if (isCorrect) {
+            setScore(score + 1);
+        }
+
+        if (currentQuestionIndex < selectedQuestions.length - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        } else {
+            setResult({ status: true, scored: score + (isCorrect ? 1 : 0) });
+        }
+
+    };
+
+    if (result.status) {
+        return <NewSummary score={score} />
     }
 
-    if (currentQuestionIndex < selectedQuestions.length - 1) {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
-    } else if(currentQuestionIndex === selectedQuestions.length - 1){
-        // return( <NewSummary score={score + (isCorrect ? 1 : 0)}/>)
-        alert(`Quiz complete! Your score is ${score + (isCorrect ? 1 : 0)}.`);
-    }
 
-};
+    const currentQuestion = selectedQuestions[currentQuestionIndex];
 
-const currentQuestion = selectedQuestions[currentQuestionIndex];
+    let shuffledAnswers = currentQuestion.answers.sort(() => Math.random() - 0.5);
 
-let shuffledAnswers = currentQuestion.answers.sort(() => Math.random() - 0.5);
-
-return (
-    <div id="quiz">
+    return (
+        <div id="quiz">
             <div>
                 <h2>Sual {currentQuestionIndex + 1}</h2>
                 <p>{currentQuestion.text}</p>
@@ -55,14 +63,15 @@ return (
             <div id="answers">
                 {shuffledAnswers.map((option, index) => (
                     <li key={index} className='answer'>
-                    <button onClick={() => handleOptionClick(option)}>
-                        {option}
-                    </button>
+                        <button onClick={() => handleOptionClick(option)}>
+                            {option}
+                        </button>
                     </li>
                 ))}
             </div>
+            {/* {result.status  && <NewSummary score={score}/>} */}
         </div>
 
-)
+    )
 }
 export default NewQuiz;
