@@ -21,11 +21,11 @@ const Summary = ({ userAnswers, questions }) => {
         </p>
         <p>
           <span className='number'>{correctAnswersShare}%</span>
-          <span className='text'>answered correctly</span>
+          <span className='text'>Doğru cavablandırılıb</span>
         </p>
         <p>
           <span className='number'>{wrongAnswersShare}%</span>
-          <span className='text'>answered incorrectly</span>
+          <span className='text'>Yalnış cavablandırılıb</span>
         </p>
       </div>
       <ol>
@@ -41,9 +41,12 @@ const Summary = ({ userAnswers, questions }) => {
           return (
             <li key={index}>
               <h3>{index + 1}</h3>
-              <p className='question'>{questions[index].text}</p>
+              <strong><p className='question'>{questions[index].text}</p></strong>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
-              {/* <p className="user-answer correct">{correctAnswer}</p> */}
+              <h4>
+                <strong>Doğru cavab:</strong><p className="user-answer correct">{questions[index].answers[0]}</p>
+              </h4>
+
             </li>
           );
         })}
