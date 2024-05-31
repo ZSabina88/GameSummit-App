@@ -276,11 +276,19 @@ header h1 {
 
 #summary h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   text-align: center;
   margin: 0;
   text-transform: uppercase;
   color: #3a2353;
+  width: 70%;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px){
+  #summary h2{
+    font-size: 1.4rem;
+  } 
 }
 
 
