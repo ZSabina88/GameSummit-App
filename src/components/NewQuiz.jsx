@@ -1,7 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState} from 'react';
 import QEUSTIONS from "../questions.js"
-import Answers from './Answers.jsx';
-import { redirect } from 'react-router-dom';
 import NewSummary from './NewSummary.jsx';
 
 function getRandomQuestions(questionsArray, numQuestions) {
@@ -18,11 +16,6 @@ const NewQuiz = () => {
         status: false,
         scored: ""
     });
-    const [answer, setAnswer] = useState({
-        selectedAnswer: "",
-        isCorrect: null
-    });
-
 
     const handleOptionClick = (option) => {
         const currentQuestion = selectedQuestions[currentQuestionIndex];
@@ -62,14 +55,18 @@ const NewQuiz = () => {
             </div>
             <div id="answers">
                 {shuffledAnswers.map((option, index) => (
-                    <li key={index} className='answer'>
-                        <button onClick={() => handleOptionClick(option)}>
+                    // <li key={index} className="answer">
+                    <li key={index} className={`answer ${
+                        currentQuestion.answer === option
+                            ? "correct"
+                            : "wrong"
+                    }`}>
+                        <button onClick={() => handleOptionClick(option)} >
                             {option}
                         </button>
                     </li>
                 ))}
             </div>
-            {/* {result.status  && <NewSummary score={score}/>} */}
         </div>
 
     )
