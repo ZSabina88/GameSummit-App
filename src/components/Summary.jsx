@@ -13,11 +13,11 @@ const Summary = ({ userAnswers, questions }) => {
   return (
     <div id='summary'>
       <img src={quizCompleteImg} alt="Trophy icon" />
-      <h2>Quiz completed!</h2>
+      <h2>Sorğu tamamlandı!</h2>
       <div id='summary-stats'>
         <p>
           <span className='number'>{skippedAnswersShare}%</span>
-          <span className='text'>skipped</span>
+          <span className='text'>ötürülmüş suallar</span>
         </p>
         <p>
           <span className='number'>{correctAnswersShare}%</span>
@@ -25,7 +25,7 @@ const Summary = ({ userAnswers, questions }) => {
         </p>
         <p>
           <span className='number'>{wrongAnswersShare}%</span>
-          <span className='text'>Yalnış cavablandırılıb</span>
+          <span className='text'>Yanlış cavablandırılıb</span>
         </p>
       </div>
       <ol>
